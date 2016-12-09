@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "allowJs": true,
+    "strictNullChecks": true,
+//    "lib": [ "es2015.promise", "es5" , "dom"],
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+//  "include":[
+//    "index.ts",
+//    "typings/**/*",
+//    "src/**/*",
+//    "node_modules/inversify/dts/**/*"
+//  ]
+}
