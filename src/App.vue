@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <hello></hello>
   <list type="Complex"/>
     <list type="Selling"/>
     <list type="Sold"/>

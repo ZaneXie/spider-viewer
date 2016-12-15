@@ -6,7 +6,7 @@ import Hello from './components/Hello'
 import List from './components/list/index';
 
 console.log(Hello);
-
+console.log('xxx',List);
 
 export default {
   name      : 'app',
@@ -15,7 +15,11 @@ export default {
     List
   },
   created   : function() {
-    // let socket = this.$socket;
+    console.log(this.$store.state.count);
+    let socket = this.$socket;
+    socket.on('test', (...args)=>{
+      console.log(args);
+    })
     // this.$socket.on('Parsing', (data) => {
     //   console.log(data);
     // })
