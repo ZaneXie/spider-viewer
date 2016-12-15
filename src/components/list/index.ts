@@ -8,26 +8,28 @@ export default {
     'type'
   ],
   beforeCreate: function () {
-    let socket = this.$socket;
-    let that = this;
-    this.$socket.on('Parsing', (type) => {
-      if (type[0] === that.type) {
-        console.log(type);
-        this.current = type[1];
+
+  },
+  filters     : {
+    cal: function (value) {
+      value = 11 - value
+      let color = 'blue'
+      if (value === 10) {
+        color = 'green';
+      } else if (value > 6) {
+      } else if (value == 1) {
+        color = 'red'
       }
-    })
-    this.$socket.on('TargetUrlChange', (type ) => {
-      if (type[0] === that.type) {
-        console.log(type );
-        that.items = type[1];
-      }
-    })
+
+      return `badge bg-${color}`
+    }
   },
   data () {
     return {
-      title: 'title',
-      current:'waiting.',
-      items: []
+      column : 10,
+      title  : 'title',
+      current: 'waiting.',
+      items  : []
     }
   }
 }
