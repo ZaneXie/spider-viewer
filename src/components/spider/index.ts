@@ -3,12 +3,19 @@
  */
 
 export default {
-  name        : 'list',
+  name        : 'spider',
   props       : [
     'type'
   ],
   beforeCreate: function () {
-
+    let type = this.$route.params.type;
+    console.log(type);
+  },
+  computed:{
+    title:function(){
+      let type = this.$route.params.type;
+      return  type[0].toUpperCase() + type.slice(1);
+    }
   },
   filters     : {
     cal: function (value) {

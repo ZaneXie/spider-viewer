@@ -14,7 +14,7 @@
   <div class="box">
 
     <div class="box-header with-border">
-      <h3 class="box-title">Compilex List</h3>
+      <h3 class="box-title">{{title}} List</h3>
     </div>
     <div class="box-body">
       <table class="table table-bordered table-hover">
