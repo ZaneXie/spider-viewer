@@ -9,11 +9,11 @@
   },
   "exclude": [
     "node_modules"
+  ],
+  "include":[
+    "index.ts",
+    "typings/**/*",
+    "src/**/*",
+    "node_modules/vue-router/types/*"
   ]
-//  "include":[
-//    "index.ts",
-//    "typings/**/*",
-//    "src/**/*",
-//    "node_modules/inversify/dts/**/*"
-//  ]
 }

@@ -4,7 +4,6 @@
 
 import Dash from './components/dash';
 
-
 export default {
   name      : 'app',
   components: {

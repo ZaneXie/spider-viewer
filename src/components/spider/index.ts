@@ -3,40 +3,85 @@
  */
 
 export default {
-  name        : 'spider',
-  props       : [
+  name: 'spider',
+  props: [
     'type'
   ],
   beforeCreate: function () {
     let type = this.$route.params.type;
-    console.log(type);
+    this.$store.dispatch("refreshComplex");
   },
-  computed:{
-    title:function(){
-      let type = this.$route.params.type;
-      return  type[0].toUpperCase() + type.slice(1);
+  watch: {}
+  ,
+  computed: {
+    totalPage: function () {
+      return Math.ceil(this.allData.length / this.limit);
     }
-  },
-  filters     : {
+    ,
+    data: function () {
+      return this.allData.slice(this.limit * this.page, this.limit * (this.page + 1));
+    }
+    ,
+    title: function () {
+      return this.$route.name
+    }
+  }
+  ,
+  filters: {
     cal: function (value) {
-      value = 11 - value
       let color = 'blue'
-      if (value === 10) {
+      if (value === 100) {
         color = 'green';
-      } else if (value > 6) {
-      } else if (value == 1) {
+      } else if (value > 60) {
+      } else if (value == 0) {
         color = 'red'
       }
 
       return `badge bg-${color}`
     }
-  },
-  data () {
+  }
+  ,
+  data()
+  {
     return {
-      column : 10,
-      title  : 'title',
+      page: 0,
+      limit: 10,
+      column: 10,
+      counter: 0,
       current: 'waiting.',
-      items  : []
+      allData: this.$store.state.complex.data,
+      items: []
+    }
+  }
+  ,
+  methods: {
+    nextPage: function (value) {
+      if (!value) {
+        value = 1;
+      }
+
+      let next = this.page + value;
+      if (next < this.totalPage && next >= 0) {
+        console.log('change page to ' + next);
+        this.page = next;
+      }
+    }
+    ,
+    gotoPage: function (value) {
+      this.page = value;
+    }
+    ,
+    add: function () {
+      this.$store.state.complex.data.push({
+        id: 200,
+        status: 'done',
+        percent: 100,
+        item: {
+          url: "http://github.com",
+          price: 100,
+          size: 100,
+        },
+      })
     }
   }
 }

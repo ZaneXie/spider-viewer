@@ -15,23 +15,26 @@
 
     <div class="box-header with-border">
       <h3 class="box-title">{{title}} List</h3>
+      <button v-on:click="nextPage(1)">Add 1</button>
+      <p>The button above has been clicked {{ page }} times.</p>
+      <button v-on:click="add">Add xxx</button>
     </div>
     <div class="box-body">
       <table class="table table-bordered table-hover">
         <tr>
           <th>#</th>
           <th>链接</th>
-          <th>面积</th>
-          <th>单价</th>
+          <th> </th>
+          <th> </th>
           <th>状态</th>
           <th>操作</th>
         </tr>
-        <tr v-for="n in 10">
-          <td>1.</td>
-          <td>http://www.baidu.com</td>
-          <td>100</td>
-          <td>50</td>
-          <td><span :class=" n | cal">{{ 100 - n * 10}}%</span></td>
+        <tr v-for="item in data">
+          <td>{{item.id + 1}}</td>
+          <td>{{item.item.url}}</td>
+          <td>{{item.item.url}}</td>
+          <td>{{item.item.url}}</td>
+          <td><span :class="item.percent | cal">{{item.percent}}</span></td>
           <td class="operation">
             <div class="btn-group">
               <button type="button" class="btn btn-success">Action</button>
@@ -57,11 +60,20 @@
         </div>
       </div>
     </div>
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><a v-on:click.prevent="nextPage(-1)">«</a></li>
+        <template v-for="i in totalPage">
+          <li><a v-on:click.prevent="gotoPage(i-1)">{{i}}</a></li>
+        </template>
+        <li><a v-on:click.prevent="nextPage(1)">»</a></li>
+      </ul>
+    </div>
   </div>
 </template>
 
-
 <script src="./index.ts">
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

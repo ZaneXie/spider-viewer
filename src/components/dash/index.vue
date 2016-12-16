@@ -31,9 +31,9 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="nav sidebar-menu">
             <li class="header">TABLE OF CONTENTS</li>
-            <li class=""><router-link :to="{name:'Spider', params:{type:'complex'}}"><i class="fa fa-circle-o"></i> Complex</router-link></li>
-            <li class=""><router-link :to="{name:'Spider', params:{type:'Sold'}}"><i class="fa fa-circle-o"></i> Sold</router-link></li>
-            <li class=""><router-link :to="{name:'Spider', params:{type:'Selling'}}"><i class="fa fa-circle-o"></i> Selling</router-link></li>
+            <li class=""><router-link :to="{name:'Complex Spider', params:{type:'complex'}}"><i class="fa fa-circle-o"></i> Complex</router-link></li>
+            <li class=""><router-link :to="{name:'Sold Spider', params:{type:'Sold'}}"><i class="fa fa-circle-o"></i> Sold</router-link></li>
+            <li class=""><router-link :to="{name:'Selling Spider', params:{type:'Selling'}}"><i class="fa fa-circle-o"></i> Selling</router-link></li>
             <li><a href="#license"><i class="fa fa-circle-o"></i> License</a></li>
           </ul>
         </div>

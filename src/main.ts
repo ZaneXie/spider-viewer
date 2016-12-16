@@ -27,9 +27,3 @@ new Vue({
 
   }
 })
-
-let run = () => {
-  store.commit('increment');
-  setTimeout(run, 1000);
-}
-run()
