@@ -15,21 +15,21 @@
 
     <div class="box-header with-border">
       <h3 class="box-title">{{title}} List</h3>
-      <button v-on:click="nextPage(1)">Add 1</button>
-      <p>The button above has been clicked {{ page }} times.</p>
-      <button v-on:click="add">Add xxx</button>
+      <button v-on:click="refresh">refresh</button>
+      <!--<p>The button above has been clicked {{ page }} times.</p>-->
+      <!--<button v-on:click="add">Add xxx</button>-->
     </div>
     <div class="box-body">
       <table class="table table-bordered table-hover">
         <tr>
           <th>#</th>
           <th>链接</th>
-          <th> </th>
-          <th> </th>
+          <th></th>
+          <th></th>
           <th>状态</th>
           <th>操作</th>
         </tr>
-        <tr v-for="item in data">
+        <tr v-for="item in items">
           <td>{{item.id + 1}}</td>
           <td>{{item.item.url}}</td>
           <td>{{item.item.url}}</td>
@@ -72,13 +72,10 @@
   </div>
 </template>
 
-<script src="./index.ts">
-
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .operation .btn-group{
-    padding:2px;
+  .operation .btn-group {
+    padding: 2px;
   }
 </style>

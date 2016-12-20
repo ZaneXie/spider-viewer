@@ -32,3 +32,17 @@ export const store = new Vuex.Store({
 });
 
 
+let i = 101;
+setInterval(()=>{
+  complexManager.data.push({
+    id: i,
+    status: 'done',
+    percent: 100 - i,
+    item: {
+      url: "http://github.com",
+      price: 100,
+      size: 100,
+    },
+  })
+  i++;
+}, 10000)

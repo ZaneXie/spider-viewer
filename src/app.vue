@@ -5,8 +5,5 @@
   </div>
 </template>
 
-<script src='./App.ts'>
-
-</script>
 <style>
 </style>

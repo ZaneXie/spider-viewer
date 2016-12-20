@@ -136,9 +136,9 @@ interface ISpiderManager {
 
 let spiderManager = new SpiderManager();
 export class PageManager implements IPageManager {
-  currentTarget: {};
-  data: {}[];
-  totalPage:number;
+  currentTarget: {} = {};
+  data: {}[] = [];
+  totalPage:number = 0;
   limit: number = 10;
 
   constructor() {
@@ -152,7 +152,7 @@ export class PageManager implements IPageManager {
   refresh(page?: number) {
     let fill = (data, start, size) => {
       for (let i = 0; i < size; i++) {
-        this.data[start] = data[i];
+        this.data[i] = data[i];
       }
     }
 
@@ -160,21 +160,12 @@ export class PageManager implements IPageManager {
       let data = spiderManager.getTargets(page, this.limit)
       fill(data, page * this.limit, this.limit);
     } else {
-      this.data = spiderManager.getTargets();
+      console.log('xxx');
+      let data = spiderManager.getTargets();
+      console.log(data.length);
+      this.data.length = 0;
+      fill(data, 0, data.length);
+      console.log(this.data.length);
     }
-    let i = 101;
-    setInterval(()=>{
-      this.data.push({
-        id: i,
-        status: 'done',
-        percent: 100 - i,
-        item: {
-          url: "http://github.com",
-          price: 100,
-          size: 100,
-        },
-      })
-      i++;
-    }, 2000)
   }
 }

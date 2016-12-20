@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue = require('vue');
 
-import App =require('./App');
-import IO = require('socket.io-client');
+// import IO = require('socket.io-client');
 import vendor = require('./vendor');
 import {store} from './store';
 import {router} from "./router";
+import {App} from "./app";
 vendor.load();
 
 declare module vuejs {
@@ -15,7 +15,7 @@ declare module vuejs {
   }
 }
 
-(<any>Vue).prototype.$socket = IO.connect('http://localhost:3000');
+// (<any>Vue).prototype.$socket = IO.connect('http://localhost:3000');
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

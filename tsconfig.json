@@ -5,6 +5,7 @@
     "allowJs": true,
     "strictNullChecks": true,
     "lib": [ "es2015.promise", "es5" , "dom"],
+    "experimentalDecorators":true,
     "sourceMap": true
   },
   "exclude": [
@@ -14,6 +15,7 @@
     "index.ts",
     "typings/**/*",
     "src/**/*",
-    "node_modules/vue-router/types/*"
+    "node_modules/vue-router/types/*",
+    "node_modules/vue-class-component/**/*"
   ]
 }

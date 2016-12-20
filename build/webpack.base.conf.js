@@ -21,7 +21,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue', '.ts', '.tsx'],
+    extensions: ['', '.js',  '.ts', '.tsx','.vue', ],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
